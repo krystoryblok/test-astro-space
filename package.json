@@ -7,16 +7,19 @@
 		"dev": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"storyblok:pull-datasources": "storyblok datasources pull --space 287391751793418 --separate-files --suffix 287391751793418",
+		"storyblok:push-datasources": "storyblok datasources push --space 287391751793418 --separate-files --suffix 287391751793418 --verbose --"
 	},
 	"devDependencies": {
-		"@storyblok/astro": "^6.2.0",
-		"astro": "^5.7.14",
+		"@storyblok/astro": "9.0.3",
+		"astro": "^6.3.1",
+		"storyblok": "^4.7.0",
 		"vite": "^6.3.5",
 		"vite-plugin-mkcert": "^1.17.8"
 	},
 	"dependencies": {
-		"@astrojs/netlify": "^6.4.0",
-		"@astrojs/vercel": "^8.2.0"
+		"@astrojs/netlify": "^7.0.8",
+		"@astrojs/vercel": "^10.0.6"
 	}
 }

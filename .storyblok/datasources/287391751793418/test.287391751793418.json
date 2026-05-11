@@ -1,0 +1,31 @@
+{
+  "id": 110940171292562,
+  "name": "test",
+  "slug": "test",
+  "dimensions": [
+    {
+      "id": 113767338463062,
+      "name": "French",
+      "entry_value": "fr-fr",
+      "datasource_id": 110940171292562,
+      "created_at": "2025-11-18T11:20:29.115Z",
+      "updated_at": "2025-11-18T11:20:29.115Z"
+    }
+  ],
+  "created_at": "2025-11-10T11:36:42.755Z",
+  "updated_at": "2025-11-18T11:20:29.117Z",
+  "entries": [
+    {
+      "id": 110940197983723,
+      "name": "aaa",
+      "value": "1",
+      "dimension_value": ""
+    },
+    {
+      "id": 110940211262956,
+      "name": "1",
+      "value": "2",
+      "dimension_value": ""
+    }
+  ]
+}
