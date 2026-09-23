@@ -1,0 +1,16 @@
+---
+// PATTERN B
+// The import itself is behind the flag, so the component never enters the module graph.
+const GuardedPanel = import.meta.env.PUBLIC_SHOW_PANEL === "1" ? (await import("./GuardedPanel.astro")).default : undefined;
+---
+
+<demo-form>
+	{GuardedPanel && <GuardedPanel />}
+	form content
+</demo-form>
+
+<script>
+	import { DemoFormElement } from "./shared";
+
+	DemoFormElement.register();
+</script>

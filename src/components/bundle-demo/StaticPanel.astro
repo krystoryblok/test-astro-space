@@ -1,0 +1,11 @@
+---
+import style from "./staticStyle.module.css";
+---
+
+<static-panel class={style.staticPanelCssMarker}>static panel</static-panel>
+
+<script>
+	import { StaticPanelElement } from "./staticPanel";
+
+	StaticPanelElement.register();
+</script>

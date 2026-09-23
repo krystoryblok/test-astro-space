@@ -1,13 +1,19 @@
 import { defineConfig } from 'astro/config';
 import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
-import mkcert from 'vite-plugin-mkcert';
 
 import vercel from '@astrojs/vercel';
 import netlify from '@astrojs/netlify';
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
-const { NETLIFY, STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_API_BASE_URL } = env;
+const { NETLIFY, STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_API_BASE_URL, DEV_DISABLE_SSL } = env;
+
+const sslConfig = DEV_DISABLE_SSL !== '1' && {
+	https: {
+		cert: 'localhost.pem',
+		key: 'localhost-key.pem',
+	},
+};
 
 export default defineConfig({
 	integrations: [
@@ -32,6 +38,8 @@ export default defineConfig({
 	output: 'server',
 	adapter: NETLIFY ? netlify() : vercel(),
 	vite: {
-		plugins: [mkcert()],
+		server: {
+			...sslConfig,
+		},
 	},
 });

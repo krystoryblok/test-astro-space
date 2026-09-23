@@ -1,0 +1,18 @@
+---
+// PATTERN C
+// Static import again, but the panel's JS is an inline script instead of a module script.
+import InlinePanel from "./InlinePanel.astro";
+
+const showPanel = import.meta.env.PUBLIC_SHOW_PANEL === "1";
+---
+
+<demo-form>
+	{showPanel && <InlinePanel panelId="demo-1" />}
+	form content
+</demo-form>
+
+<script>
+	import { DemoFormElement } from "./shared";
+
+	DemoFormElement.register();
+</script>

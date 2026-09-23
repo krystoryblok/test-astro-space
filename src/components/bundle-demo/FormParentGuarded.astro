@@ -1,0 +1,25 @@
+---
+// PATTERN D
+// Static import of the panel component, condition on the render,
+// and the parent's own script guards the panel's registration behind the flag.
+import ParentGuardedPanel from "./ParentGuardedPanel.astro";
+
+const showPanel = import.meta.env.PUBLIC_SHOW_PANEL === "1";
+---
+
+<demo-form>
+	{showPanel && <ParentGuardedPanel />}
+	form content
+</demo-form>
+
+<script>
+	import { DemoFormElement } from "./shared";
+
+	DemoFormElement.register();
+
+	if (import.meta.env.PUBLIC_SHOW_PANEL === "1") {
+		const { ParentGuardedPanelElement } = await import("./parentGuardedPanel");
+
+		ParentGuardedPanelElement.register();
+	}
+</script>

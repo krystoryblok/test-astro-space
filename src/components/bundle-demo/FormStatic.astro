@@ -1,0 +1,18 @@
+---
+// PATTERN A
+// Static import at the top, condition only on the render.
+import StaticPanel from "./StaticPanel.astro";
+
+const showPanel = import.meta.env.PUBLIC_SHOW_PANEL === "1";
+---
+
+<demo-form>
+	{showPanel && <StaticPanel />}
+	form content
+</demo-form>
+
+<script>
+	import { DemoFormElement } from "./shared";
+
+	DemoFormElement.register();
+</script>

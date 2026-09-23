@@ -9,7 +9,10 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"storyblok:pull-datasources": "storyblok datasources pull --space 287391751793418 --separate-files --suffix 287391751793418",
-		"storyblok:push-datasources": "storyblok datasources push --space 287391751793418 --separate-files --suffix 287391751793418 --verbose --"
+		"storyblok:push-datasources": "storyblok datasources push --space 287391751793418 --separate-files --suffix 287391751793418 --verbose --",
+		"demo:inspect": "node inspect-dist.mjs",
+		"demo:prod": "PUBLIC_SHOW_PANEL=0 astro build && node inspect-dist.mjs",
+		"demo:dev": "PUBLIC_SHOW_PANEL=1 astro build && node inspect-dist.mjs"
 	},
 	"devDependencies": {
 		"@storyblok/astro": "^10.3.1",

@@ -1,0 +1,15 @@
+---
+import style from "./inlineStyle.module.css";
+
+export interface Props {
+	panelId: string;
+}
+
+const { panelId } = Astro.props;
+---
+
+<inline-panel class={style.inlinePanelCssMarker}>inline panel</inline-panel>
+
+<script define:vars={{ panelId }} is:inline>
+	console.log("INLINE_PANEL_JS_MARKER", panelId);
+</script>

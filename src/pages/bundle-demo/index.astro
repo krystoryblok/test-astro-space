@@ -1,0 +1,23 @@
+---
+export const prerender = true;
+
+const patterns = [
+	{ href: '/bundle-demo/static-import', label: 'A - static import + render condition' },
+	{ href: '/bundle-demo/guarded-import', label: 'B - import behind the flag' },
+	{ href: '/bundle-demo/inline-script', label: 'C - is:inline script' },
+	{ href: '/bundle-demo/guarded-script', label: 'D - guarded script in the parent' },
+];
+---
+
+<html lang="en">
+	<head><title>Bundle demo</title></head>
+	<body>
+		<h1>Bundle demo</h1>
+		<p>Build with <code>pnpm demo:prod</code> or <code>pnpm demo:dev</code>, then read the report.</p>
+		<ul>
+			{patterns.map((pattern) => (
+				<li><a href={pattern.href}>{pattern.label}</a></li>
+			))}
+		</ul>
+	</body>
+</html>

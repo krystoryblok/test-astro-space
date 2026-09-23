@@ -1,0 +1,11 @@
+---
+import style from "./guardedStyle.module.css";
+---
+
+<guarded-panel class={style.guardedPanelCssMarker}>guarded panel</guarded-panel>
+
+<script>
+	import { GuardedPanelElement } from "./guardedPanel";
+
+	GuardedPanelElement.register();
+</script>
